@@ -1,0 +1,9 @@
+= Test Post 1
+rodm
+2017-02-17
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: blog, asciidoc
+:idprefix:
+
+test post 1
