@@ -1,0 +1,4 @@
+
+testing inline links
+
+The link:gradle[gradle] directory.
