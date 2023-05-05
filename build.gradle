@@ -1,30 +1,11 @@
 
-buildscript {
-    repositories {
-        mavenLocal()
-        maven {
-            url "https://plugins.gradle.org/m2/"
-        }
-    }
-
-    dependencies {
-        classpath 'me.champeau.gradle:jbake-gradle-plugin:0.2'
-        classpath 'org.ajoberstar:gradle-git-publish:0.2.1'
-        classpath 'org.asciidoctor:asciidoctor-java-integration:0.1.4'
-        classpath 'org.pegdown:pegdown:1.4.2'
-        classpath 'org.freemarker:freemarker:2.3.19'
-    }
+plugins {
+    id 'org.jbake.site' version '5.5.0'
+    id 'org.ajoberstar.git-publish' version '4.2.0'
 }
 
-apply plugin: 'base'
-apply plugin: 'me.champeau.jbake'
-apply plugin: 'org.ajoberstar.git-publish'
-
 jbake {
-    version = '2.3.2'
-
-    input = file('src/jbake')
-    output = file('build/jbake')
+    version = '2.6.7'
 
     clearCache = true
 }
@@ -32,6 +13,7 @@ jbake {
 gitPublish {
     repoUri = 'git@github.com:rodm/test-github-pages.git'
     branch = 'test'
+    sign = false
     contents {
         from(file('build/jbake')) {
             exclude '**/*-draft.html'
